@@ -38,9 +38,9 @@
 
     First of all, we can make these events into a data stream using [`Apache Kafka`](https://kafka.apache.org/) or other data streaming service.<br><br>
 Then we can use `Apache Spark` (or its python flavour `Pyspark`) or `Apache Flink` to process that real time streaming data no matter how large it grows because all three of `Apache Spark`, `Apache Flink` and `Apache Kafka` are horizontally scalable.
-There’s even an AWS service for Apache Spark auto scale clusters, called AWS EMR.
+There’s even an AWS service for Apache Spark which will auto scale clusters i.e. AWS EMR.
 
-    So architecture would be pretty straightforward:<br><br>
+    So architecture would be as per below:<br><br>
    1. We send data to stream using possibly kafka.<br>
    2. We connect our apache spark / pyspark or apache flink to connect to the source and do our ONE TIME written transformation with the continually updating stream.
 
