@@ -48,4 +48,4 @@ There’s even an AWS service for Apache Spark which will auto scale clusters i.
     1. We keep dumping our data (events) in a database.
     2. We write a one time ETL like the attached script and schedule it to run periodically at desired intervals using a crone job or `Apache Airflow`. 
 
-    > Note that the second possible architecture does not process data in REAL TIME, but on the other hand, it also does not use the streaming data as source.
+    > Note that the second possible architecture does not process data in REAL TIME, but on the other hand, it also does not use the streaming data as source. 
