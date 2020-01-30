@@ -1,0 +1,11 @@
+1) Please provide instructions on how to run the script.
+It depends on which operating system you are using. The simplest way to do so is just install PyCharm, install the required packages mentioned above and run using pycharm.
+
+2) How would you design the ETL process for it to automatically update daily? How would you scale this process if we got tens or hundreds of millions of events per day? Suggest any target architecture to cater for this growth?
+First of all, we can make these events into a data stream using Apache Kafka or other data streaming service.
+Then we can use apache spark (or its python flavour Pyspark) or apache flink to process that real time streaming data no matter how large it grows because all of Apache Spark, Apache Flink and Apache Kafka are horizontally scalable.
+There’s even an AWS service for doing i.e. AWS EMR.
+We send data to stream using possibly kafka.
+We connect our apache spark / pyspark or apache flink to connect to the source and do our one time written transformation with the continually updating stream.
+One other possible architecture could be that we keep dumping our data (events) in a database.
+We write a one time ETL like the attached script and schedule it to run periodically at desired interval using a crone job or Apache Airflow or via Oozie.
